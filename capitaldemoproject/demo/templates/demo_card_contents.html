@@ -1,0 +1,29 @@
+<h5>Capital Quiz</h5>
+<br>
+<div class="row">
+  <div class="col-auto">
+    <button class="btn btn-secondary btn-sm" type="button" hx-get="{%url 'demo'%}" hx-target="#demo_card" hx-indicator="#demo_htmx_indicator">Skip</button>
+  </div>
+  <div class="col">
+    <p>Please enter the capital of <b>{{country}}</b></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+      <input class="form-control" type="text" name="capital"/>
+      <input hidden value="{{country}}" name="country"/>
+  </div>
+  <div class="col-auto">
+      <img  class="htmx-indicator" id="demo_htmx_indicator" src="https://htmx.org/img/bars.svg"/>
+  </div>
+  <div class="col-auto">
+      <button class="btn btn-primary" type="submit">Submit</button>
+  </div>
+</div>
+{%if error%}
+<p class="text-danger m-0 mt-3">{{error}}</p>
+{%elif correct%}
+<p class="text-success m-0 mt-3">You were correct! <b>{{request_capital}}</b> is the capital of <b>{{request_country}}</b>.</p>
+{%elif correct == False%}
+<p class="text-danger m-0 mt-3">You were incorrect. <b>{{correct_capital}}</b> is the capital of <b>{{request_country}}</b>. You guessed <b>{{request_capital}}</b>.</p>
+{%endif%}
