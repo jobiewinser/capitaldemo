@@ -11,7 +11,7 @@ I have hosted this demo if you'd like to skip the install: http://capitaldemo.wi
 5. source venv/bin/activate
 5. pip install -r requirements.txt
 6. python manage.py runserver 0.0.0.0:8000
-7. Open broswer and go to http://127.0.0.1:8000/
+7. Open browser and go to http://127.0.0.1:8000/
 
 
 This took about an hour then the deployment onto a container took about 10 minutes. I considered adding a score counter, but instead kept just to the spec
